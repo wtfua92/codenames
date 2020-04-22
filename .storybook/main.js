@@ -1,9 +1,18 @@
 module.exports = {
-  stories: ["../stories/**/*.stories.js"],
-  addons: ["@storybook/addon-actions", "@storybook/addon-links"],
+  stories: ["../src/**/*.stories.js", "../src/**/*.stories.tsx"],
+  addons: ["@storybook/addon-actions", "@storybook/addon-links", "@storybook/addon-knobs"],
   webpackFinal: async (config) => {
-    // do mutation to the config
-
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ["style-loader", "css-loader", "sass-loader"],
+    });
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      use: ["ts-loader"],
+    });
+    config.resolve = {
+      extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+    };
     return config;
   },
 };

@@ -1,5 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import "./index.scss";
 
-ReactDOM.render(<React.StrictMode>test2</React.StrictMode>, document.getElementById("root"));
+import "./styles/index.scss";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <div>test</div>
+  </React.StrictMode>,
+  document.getElementById("root")
+);

@@ -42,6 +42,17 @@ const config: webpack.Configuration = {
         use: ["ts-loader"],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
     ],
   },
