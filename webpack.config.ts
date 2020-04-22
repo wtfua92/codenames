@@ -10,7 +10,7 @@ const config: webpack.Configuration = {
   context: path.resolve(__dirname, "src"),
   entry: "./index.tsx",
   output: {
-    filename: "app.[hash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
@@ -40,7 +40,7 @@ const config: webpack.Configuration = {
       {
         test: /\.tsx?$/i,
         use: ["ts-loader"],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /\.test\.tsx?$/],
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
