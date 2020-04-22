@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -30,6 +31,7 @@
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "@types/shortid": "0.0.29",
     "@types/testing-library__react": "^10.0.1",
     "@types/webpack": "^4.41.12",
     "@types/webpack-dev-server": "^3.10.1",

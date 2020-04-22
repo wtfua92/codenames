@@ -9,6 +9,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.tsx?$/,
       use: ["ts-loader"],
+      exclude: /\.test.tsx?$/,
     });
     config.resolve = {
       extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],

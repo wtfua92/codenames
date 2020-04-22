@@ -13,7 +13,7 @@ describe("<WordCard/>", () => {
 
   it("should display a regular guess word card", () => {
     const { queryByText } = getRenderedElement();
-    expect(queryByText(defaultProps.word)).toBeDefined();
+    expect(queryByText(defaultProps.value)).toBeDefined();
   });
 
   it("should not display the word if the card was picked", () => {
@@ -21,7 +21,7 @@ describe("<WordCard/>", () => {
       ...defaultProps,
       isPicked: true,
     });
-    expect(queryByText(defaultProps.word)).toBeFalsy();
+    expect(queryByText(defaultProps.value)).toBeFalsy();
   });
 
   it("should display the number of a card", () => {

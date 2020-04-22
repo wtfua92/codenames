@@ -24,7 +24,7 @@ export default {
 };
 
 export const wordCardData: WordCardProps = {
-  word: "Word",
+  value: "Word",
   index: 1,
   type: TYPES.NEUTRAL,
   isPicked: false,

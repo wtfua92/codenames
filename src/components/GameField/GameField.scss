@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+@import "../../styles/sizes";
+
+.game-field {
+  background-color: $bg;
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  padding: 2rem;
+}

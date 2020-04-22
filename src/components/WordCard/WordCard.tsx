@@ -6,7 +6,7 @@ import { TYPES } from "../../api/constants";
 import "./WordCard.scss";
 
 export type WordCardProps = {
-  word: string;
+  value: string;
   type: TYPES;
   isPicked: boolean;
   index: number;
@@ -18,8 +18,8 @@ function WordCard(props: WordCardProps): ReactElement {
   const DEFAULT_CLASS = "game-field__word-card";
   const GAME_OVER_LABEL = "GAME OVER";
 
-  const { word, type, isPicked, index, onClick } = props;
-  const showWord = !isPicked && word.toUpperCase();
+  const { value, type, isPicked, index, onClick } = props;
+  const showWord = !isPicked && value.toUpperCase();
   const showGameOver = isPicked && type === TYPES.BLACK && GAME_OVER_LABEL;
   const valueToDisplay = showWord || showGameOver || null;
 
