@@ -12,21 +12,22 @@ export type WordCardProps = {
   index: number;
   onClick: () => void | null;
   id?: string;
+  showType?: boolean;
 };
 
 function WordCard(props: WordCardProps): ReactElement {
   const DEFAULT_CLASS = "game-field__word-card";
   const GAME_OVER_LABEL = "GAME OVER";
 
-  const { value, type, isPicked, index, onClick } = props;
+  const { value, type, isPicked, index, onClick, showType = false } = props;
   const showWord = !isPicked && value.toUpperCase();
   const showGameOver = isPicked && type === TYPES.BLACK && GAME_OVER_LABEL;
   const valueToDisplay = showWord || showGameOver || null;
 
   const cardClassnames = classnames({
     [DEFAULT_CLASS]: true,
-    [`${DEFAULT_CLASS}--guess`]: !isPicked,
-    [`${DEFAULT_CLASS}--${type}`]: isPicked,
+    [`${DEFAULT_CLASS}--guess`]: !isPicked && !showType,
+    [`${DEFAULT_CLASS}--${type}`]: isPicked || showType,
     [`${DEFAULT_CLASS}--spy-man`]: isPicked && type !== TYPES.BLACK && index % 2 === 0,
     [`${DEFAULT_CLASS}--spy-woman`]: isPicked && type !== TYPES.BLACK && index % 2 === 1,
     [`${DEFAULT_CLASS}--spy-black`]: isPicked && type === TYPES.BLACK,
