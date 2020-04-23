@@ -16,10 +16,11 @@ export type WordCardProps = {
 };
 
 function WordCard(props: WordCardProps): ReactElement {
+  console.log("rendered");
   const DEFAULT_CLASS = "game-field__word-card";
   const GAME_OVER_LABEL = "GAME OVER";
 
-  const { value, type, isPicked, index, onClick, showType = false } = props;
+  const { value, type, isPicked, index, onClick, showType } = props;
   const showWord = !isPicked && value.toUpperCase();
   const showGameOver = isPicked && type === TYPES.BLACK && GAME_OVER_LABEL;
   const valueToDisplay = showWord || showGameOver || null;
