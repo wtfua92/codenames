@@ -31,12 +31,12 @@
     &--spy-woman::before {
       background-image: url("./images/spy-1.svg");
       background-size: 40%;
-      background-position: 58% 65%;
+      background-position: 50%;
     }
 
     &--spy-man::before {
-      background-size: 1100%;
-      background-position: 51.5% 46.5%;
+      background-size: 50%;
+      background-position: 60% 20%;
       background-image: url("./images/spy-2.svg");
     }
 
@@ -53,10 +53,12 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: $font-size-8x * 2;
-        transform: translate(37%, -5%);
         transition: opacity 200ms ease-in;
-        color: rgba($neutral-text, 0.3);
+        color: rgba($neutral-text, 0.2);
         opacity: 1;
       }
 

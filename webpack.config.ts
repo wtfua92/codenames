@@ -40,7 +40,7 @@ const config: webpack.Configuration = {
       {
         test: /\.tsx?$/i,
         use: ["ts-loader"],
-        exclude: [/node_modules/, /\.test\.tsx?$/],
+        exclude: [/node_modules/, /\.(test|stories)\.tsx?$/],
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
@@ -59,7 +59,6 @@ const config: webpack.Configuration = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Codenames",
       template: "./index.html",
     }),
     new MiniCssExtractPlugin({

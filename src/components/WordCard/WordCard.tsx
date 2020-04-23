@@ -10,7 +10,7 @@ export type WordCardProps = {
   type: TYPES;
   isPicked: boolean;
   index: number;
-  onClick: () => void;
+  onClick: () => void | null;
   id?: string;
 };
 
