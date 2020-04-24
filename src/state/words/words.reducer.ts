@@ -1,4 +1,5 @@
 import { StateWord, WORD_ACTION, WordActionsType } from "./words.actions";
+import { action } from "@storybook/addon-actions";
 
 export interface WordsState {
   words: StateWord[];
@@ -39,6 +40,7 @@ function wordsReducer(state: WordsState, action: WordActionsType): WordsState {
         words: state.words.map((w) => ({ ...w, showType: !w.showType })),
       };
     }
+    /* istanbul ignore next */
     default: {
       return state;
     }

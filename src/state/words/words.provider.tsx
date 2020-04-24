@@ -17,7 +17,7 @@ function WordsProvider(props): React.ReactElement {
   return <WordsContext.Provider value={value} {...props} />;
 }
 
-interface UseWordsInterface {
+export interface UseWordsInterface {
   getWords: () => StateWord[];
   pickItem: (cardIndex: number) => ReactDispatchWordActionsType;
   setWords: (words: StateWord[]) => ReactDispatchWordActionsType;

@@ -11,13 +11,15 @@ type HeaderProps = {
 
 // TODO: Change button text to icon and add title
 
+const buttonTitle = "Show game scheme";
+
 export function Header({ showGameSchemeHandler }: HeaderProps): ReactElement {
   return (
     <div className="header">
       <h2 className="header__title">Codenames</h2>
       <div className="header__show-types-btn">
-        <button type="button" onClick={showGameSchemeHandler}>
-          Show game scheme
+        <button type="button" title={buttonTitle} onClick={showGameSchemeHandler}>
+          {buttonTitle}
         </button>
       </div>
     </div>

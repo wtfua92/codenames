@@ -7,7 +7,7 @@ export enum WORD_ACTION {
   SHOW_TYPES = "SHOW_TYPE",
 }
 
-export interface StateWord extends WordCardProps {
+export interface StateWord extends Omit<WordCardProps, "onClick"> {
   id: string;
   showType: boolean;
 }

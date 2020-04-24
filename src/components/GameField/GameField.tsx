@@ -8,7 +8,7 @@ import { StateWord } from "../../state/words/words.actions";
 
 import "./GameField.scss";
 
-type GameFieldProps = {
+export type GameFieldProps = {
   children: React.ReactNode;
 };
 
