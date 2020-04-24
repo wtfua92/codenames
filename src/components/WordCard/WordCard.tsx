@@ -16,7 +16,6 @@ export type WordCardProps = {
 };
 
 function WordCard(props: WordCardProps): ReactElement {
-  console.log("rendered");
   const DEFAULT_CLASS = "game-field__word-card";
   const GAME_OVER_LABEL = "GAME OVER";
 

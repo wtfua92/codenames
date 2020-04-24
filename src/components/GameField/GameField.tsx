@@ -1,29 +1,23 @@
 import * as React from "react";
 import { ReactElement, useEffect } from "react";
-import "./GameField.scss";
+
 import { getMockWords } from "../../utils/helpers";
 import WordCard from "../WordCard/WordCard";
 import { useWords } from "../../state/words/words.provider";
 import { StateWord } from "../../state/words/words.actions";
 
+import "./GameField.scss";
+
 type GameFieldProps = {
   children: React.ReactNode;
-  showGameSchemeHandler: () => void;
 };
 
-export function GameField({ children, showGameSchemeHandler }: GameFieldProps): ReactElement {
-  return (
-    <div className="game-field-container">
-      <button type="button" onClick={showGameSchemeHandler}>
-        Test
-      </button>
-      <div className="game-field">{children}</div>
-    </div>
-  );
+export function GameField({ children }: GameFieldProps): ReactElement {
+  return <div className="game-field">{children}</div>;
 }
 
 function GameFieldContainer(): ReactElement {
-  const { setWords, showTypes, pickItem, getWords } = useWords();
+  const { setWords, pickItem, getWords } = useWords();
 
   useEffect(() => {
     const mockWords = getMockWords();
@@ -46,7 +40,7 @@ function GameFieldContainer(): ReactElement {
     return <WordCard key={id} {...word} onClick={wordCardHandler(i)} />;
   });
 
-  return <GameField showGameSchemeHandler={showTypes}>{wordCards}</GameField>;
+  return <GameField>{wordCards}</GameField>;
 }
 
 export default GameFieldContainer;

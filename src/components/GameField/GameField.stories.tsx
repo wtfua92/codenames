@@ -23,9 +23,7 @@ const unpickedWordData = transformWordsToCardsData(getMockWords(), false);
 const pickedWordData = transformWordsToCardsData(getMockWords(), true);
 
 export const GameFieldWithUnpickedWords = (): ReactNode => (
-  <GameField showGameSchemeHandler={action("ShowGameScheme")}>{unpickedWordData}</GameField>
+  <GameField>{unpickedWordData}</GameField>
 );
 
-export const GameFieldWithPickedWords = (): ReactNode => (
-  <GameField showGameSchemeHandler={action("ShowGameScheme")}>{pickedWordData}</GameField>
-);
+export const GameFieldWithPickedWords = (): ReactNode => <GameField>{pickedWordData}</GameField>;
