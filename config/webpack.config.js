@@ -12,7 +12,7 @@ const config = {
   entry: "./index.tsx",
   output: {
     filename: "[name].[hash].js",
-    path: path.resolve(__dirname, "../dist/client"),
+    path: path.resolve(__dirname, "../dist/"),
   },
   devServer: {
     contentBase: "../dist/client",

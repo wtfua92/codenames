@@ -2,13 +2,13 @@
   "files": [],
   "references": [
     {
-      "path": "./src/client"
+      "path": "./src/client/"
     },
     {
-      "path": "./src/server"
+      "path": "./src/server/"
     },
     {
-      "path": "./src/shared"
+      "path": "./src/shared/"
     }
   ]
 }

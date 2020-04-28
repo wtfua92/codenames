@@ -1,19 +1,23 @@
 {
   "extends": "../../config/tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "noImplicitAny": true,
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    },
     "baseUrl": ".",
-    "outDir": "../../dist/server",
-    "composite": true,
-    "rootDir": "../"
+    "outDir": "../../dist/",
+    "rootDir": "../",
+    "target": "ES5"
   },
   "include": [
-    "./**/*"
+    "./**/*",
+    "../shared/**/*"
   ],
   "exclude": [
     "../../node_modules",
-    "../shared",
     "../client"
   ]
 }

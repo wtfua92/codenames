@@ -1,18 +1,11 @@
 {
   "extends": "../../config/tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "composite": true,
-    "esModuleInterop": true,
-    "outDir": "../../dist/shared",
-    "rootDir": "../"
+    "outDir": "../../dist/"
   },
-  "include": [
-    "./**/*"
-  ],
   "exclude": [
     "node_modules",
-    "../shared",
-    "../server"
+    "../server",
+    "../client"
   ]
 }

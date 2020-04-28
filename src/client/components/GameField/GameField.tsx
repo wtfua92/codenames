@@ -1,11 +1,11 @@
 import React, { ReactElement, useEffect } from "react";
 
-import { getMockWords } from "../../../shared/utils/helpers";
 import WordCard from "../WordCard/WordCard";
 import { useWords } from "../../state/words/words.provider";
 import { StateWord } from "../../state/words/words.actions";
 
 import "./GameField.scss";
+import { Word } from "../../../shared/api/classes/Word.class";
 
 export type GameFieldProps = {
   children: React.ReactNode;
@@ -19,16 +19,19 @@ function GameFieldContainer(): ReactElement {
   const { setWords, pickItem, getWords } = useWords();
 
   useEffect(() => {
-    const mockWords = getMockWords();
-    const wordCardProps: StateWord[] = mockWords.map((w, i) => ({
-      ...w,
-      index: i + 1,
-      isPicked: false,
-      onClick: null,
-      showType: false,
-    }));
+    fetch("http://localhost:3001/test")
+      .then((resJson) => resJson.json())
+      .then((res) => {
+        const wordCardProps: StateWord[] = (res as Word[]).map((w, i) => ({
+          ...w,
+          index: i + 1,
+          isPicked: false,
+          onClick: null,
+          showType: false,
+        }));
 
-    setWords(wordCardProps);
+        setWords(wordCardProps);
+      });
   }, []);
 
   const wordCardHandler = (index: number) => (): void => {

@@ -1,12 +1,12 @@
-import * as express from "express";
-import * as cors from "cors";
+import * as http from "http";
 
-const app: express.Express = express();
+import app from "./server";
 
-app.use(cors);
+app.set("port", 3001);
 
-app.listen(3001, "localhost", () => {
-  console.log("Server connected");
+const server = http.createServer(app);
+
+server.listen(3001, "localhost");
+server.on("listening", () => {
+  console.log("connected", server.address());
 });
-
-export default app;

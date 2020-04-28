@@ -4,7 +4,7 @@
     "module": "esnext",
     "baseUrl": ".",
     "jsx": "react",
-    "outDir": "../../dist/client",
+    "outDir": "../../dist/",
     "rootDir": "../",
     "lib": [
       "dom",
@@ -13,9 +13,9 @@
     ]
   },
   "include": [
-    "."
+    "./**/*",
+    "../shared/**/*"
   ],
-  "files": ["../shared/utils/data.json"],
   "exclude": [
     "../../node_modules",
     "../server",
