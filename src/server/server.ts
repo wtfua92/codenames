@@ -3,7 +3,6 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import { getMockWords } from "../shared/utils/helpers";
-// import { getMockWords } from "../shared/utils/helpers";
 
 const app: express.Express = express();
 

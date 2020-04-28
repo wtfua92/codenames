@@ -6,9 +6,10 @@
   "scripts": {
     "build:client": "NODE_ENV=production webpack --config config/webpack.config.js",
     "build:server": "rm -rf dist/server && tsc -b src/server",
-    "dev": "NODE_ENV=development webpack-dev-server --config config/webpack.config.js --open",
-    "start": "npm run server && npm run dev",
-    "server": "nodemon src/server/index.ts",
+    "build": "npm run build:server && npm run build:client",
+    "dev:client": "NODE_ENV=development webpack-dev-server --config config/webpack.config.js --open",
+    "dev:server": "nodemon src/server/index.ts",
+    "start": "concurrently \"npm:dev:*\" --kill-others",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --coverage"
@@ -50,6 +51,7 @@
     "@typescript-eslint/parser": "^2.29.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.2.0",
     "css-loader": "^3.5.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",

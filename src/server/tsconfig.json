@@ -14,7 +14,8 @@
   },
   "include": [
     "./**/*",
-    "../shared/**/*"
+    "../shared/**/*",
+    "../shared/utils/data.json"
   ],
   "exclude": [
     "../../node_modules",
