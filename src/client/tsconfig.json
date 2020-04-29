@@ -1,0 +1,27 @@
+{
+  "extends": "../../config/tsconfig.base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "baseUrl": ".",
+    "jsx": "react",
+    "outDir": "../../dist/",
+    "rootDir": "../",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ]
+  },
+  "include": [
+    "./**/*",
+    "../shared/**/*"
+  ],
+  "exclude": [
+    "../../node_modules",
+    "../server",
+    "../../dist",
+    "./**/*.test.tsx",
+    "./**/*.test.ts",
+    "./**/*.stories.tsx"
+  ]
+}
